@@ -1,4 +1,4 @@
-const backendDomain="http://localhost:3000"
+const backendDomain="https://ecommerce-mauve-alpha.vercel.app/"
 
 const SummaryApi={
     signup:{
