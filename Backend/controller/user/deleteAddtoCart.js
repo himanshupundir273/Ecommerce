@@ -3,6 +3,7 @@ const CartModel = require("../../models/cartProduct");
 async function deleteAddtoCart(req,res){
     try{
         const currentUser = req.userid;
+        console.log("currenthskbf",currentUser);
         const productId = req.body._id;
         const deleteProduct=await CartModel.deleteOne({ 
             _id: productId,

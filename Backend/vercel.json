@@ -19,10 +19,6 @@
         "src": "/(.*)",
         "dest": "frontend/pages/index.js"
       }
-    ],
-    "env": {
-      "BACKEND_URL": "@backend_url",
-      "FRONTEND_URL": "@frontend_url",
-      "MONGODB_URI":"mongodb+srv://himanshupundir273:himanshu273@cluster0.y5e2c.mongodb.net/Ecommerce?retryWrites=true&w=majorityappName=Cluster0"
-    }
+    ]
+  
   }
