@@ -17,6 +17,7 @@ import "./App.css";
 import CategoryProduct from "./pages/CategoryProduct";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
+import Searchproduct from "./pages/Searchproduct";
 
 function App() {
   const dispatch = useDispatch();
@@ -65,11 +66,12 @@ function App() {
             <Route path="/admin-panel/all-products" element={<AllProducts />} />
           </Route>
           <Route
-            path="/product-category/:categoryName"
+            path="/product-category"
             element={<CategoryProduct />}
           />
           <Route path="product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart/>} />
+          <Route path="/search" element={<Searchproduct/>}/>
 
         </Routes>
       </div>

@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import displayCurrency from '../helpers/displayCurrency';
 import CategroyWiseProductDisplay from '../components/CategoryWiseProductDisplay';
-//import addToCart from '../helpers/addToCart';
+import addToCart from '../helpers/addtoCart';
 import Context from '../context/index';
 
 function ProductDetails() {
@@ -77,6 +77,17 @@ function ProductDetails() {
   const handleLeaveImageZoom = () => {
     setZoomImage(false);
   };
+  const handleAddToCart = async(e,id) =>{
+    await addToCart(e,id)
+    fetchUserAddToCart()
+  }
+  const handleBuyProduct = async(e,id)=>{
+    await addToCart(e,id)
+    navigate("/cart")
+    fetchUserAddToCart()
+    
+
+  }
 
   return (
     <div className="container mx-auto p-4">

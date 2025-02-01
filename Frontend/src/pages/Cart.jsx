@@ -111,7 +111,7 @@ const Cart = () => {
 
         if(responseData.success){
             await fetchData()
-            context.fetchUserAddToCart()
+            await context.fetchUserAddToCart()
         }
     }
 

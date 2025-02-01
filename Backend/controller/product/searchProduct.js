@@ -1,6 +1,7 @@
 const ProductModel = require("../../models/productModel")
 
 const searchProduct = async(req,res)=>{
+
     try{
         const query = req.query.q 
 
@@ -16,7 +17,6 @@ const searchProduct = async(req,res)=>{
                 }
             ]
         })
-
 
         res.json({
             data  : product ,

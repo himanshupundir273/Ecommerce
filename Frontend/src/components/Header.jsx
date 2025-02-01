@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
@@ -17,6 +17,11 @@ function Header() {
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch();
   const context = useContext(Context);
+  const navigate = useNavigate()
+  const searchInput = useLocation()
+  const URLSearch = new URLSearchParams(searchInput?.search)
+  const searchQuery = URLSearch.getAll("q")
+  const [search,setSearch] = useState(searchQuery);
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.Logout.url, {
       method: SummaryApi.Logout.method,
@@ -31,7 +36,15 @@ function Header() {
       toast.error(data.error);
     }
   };
-  console.log("header add to card count", context);
+  const handleSearch = (e) => {
+    const { value } = e.target;
+    setSearch(value)
+    if (value) {
+      navigate(`/search?q=${value}`);
+    } else {
+      navigate("/search");
+    }
+  };
 
   return (
     <header className="h-16 shadow-md bg-white fixed w-full z-40">
@@ -41,13 +54,15 @@ function Header() {
             <Logo w={90} h={50} />
           </Link>
         </div>
-        <div className="hidden lg:flex items-center max-w-sm justify-between w-full border rounded-full focus-within:shadow pl-2">
+        <div className="hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2">
           <input
             type="text"
-            placeholder="Search product here ..."
+            placeholder="search product here..."
             className="w-full outline-none"
+            onChange={handleSearch}
+            value={search}
           />
-          <div className="bg-red-400 text-lg min-w-[50px] h-8 flex items-center rounded-r-full text-white justify-center">
+          <div className="text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white">
             <GrSearch />
           </div>
         </div>
