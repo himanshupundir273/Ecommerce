@@ -1,4 +1,8 @@
-const backendDomain="http://localhost:3000"
+const backendDomain = import.meta.env.VITE_BACKEND_URL || process.env.REACT_APP_BACKEND_URL;
+
+if (!backendDomain) {
+  throw new Error('Backend URL is not defined in environment variables');
+}
 
 const SummaryApi={
     signup:{

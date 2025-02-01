@@ -40,7 +40,6 @@ router.get("/search",searchProduct)
 router.post("/filter-product",filterProductController)
 
 
-
 // Add to Card
 router.post("/addtocart",authToken,addToCart)
 router.get("/countaddtocart",authToken,countaddtocart)

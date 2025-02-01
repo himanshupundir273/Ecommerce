@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "backend/index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "frontend/package.json",
+        "use": "@vercel/next"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "backend/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "frontend/pages/index.js"
+      }
+    ],
+    "env": {
+      "BACKEND_URL": "@backend_url",
+      "FRONTEND_URL": "@frontend_url",
+      "MONGODB_URI":"mongodb+srv://himanshupundir273:himanshu273@cluster0.y5e2c.mongodb.net/Ecommerce?retryWrites=true&w=majorityappName=Cluster0"
+    }
+  }
