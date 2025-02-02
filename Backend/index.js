@@ -7,7 +7,7 @@ const cookieParser=require('cookie-parser')
 
 const app = express();
 app.use(cors({
-  origin:[process.env.FRONTEND_URL],
+  origin:'https://ecommerce-backend-mu-blue.vercel.app/',
   methods:["GET","PUT","POST","DELETE"],
   credentials: true
 }));

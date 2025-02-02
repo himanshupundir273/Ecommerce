@@ -8,7 +8,6 @@ const SummaryApi={
     signup:{
         url:`${backendDomain}/api/signup`,
         method:"post",
-        withCredentials:true
     },
     signin:{
         url:`${backendDomain}/api/signin`,
