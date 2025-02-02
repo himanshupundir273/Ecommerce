@@ -1,4 +1,4 @@
-const backendDomain = "http://localhost:3000";
+const backendDomain = import.meta.env.VITE_BACKEND_URL;
 
 if (!backendDomain) {
   throw new Error('Backend URL is not defined in environment variables');
@@ -7,11 +7,12 @@ if (!backendDomain) {
 const SummaryApi={
     signup:{
         url:`${backendDomain}/api/signup`,
-        method:"post"
+        method:"post",
+        withCredentials:true
     },
     signin:{
         url:`${backendDomain}/api/signin`,
-        method:"post"
+        method:"post",
     },
     userDetails:{
         url:`${backendDomain}/api/user-details`,
