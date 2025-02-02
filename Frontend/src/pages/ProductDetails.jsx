@@ -35,6 +35,7 @@ function ProductDetails() {
     setLoading(true);
     const response = await fetch(SummaryApi.ProductDetails.url, {
       method: SummaryApi.ProductDetails.method,
+      withCredentials: true,
       headers: {
         "content-type": "application/json",
       },

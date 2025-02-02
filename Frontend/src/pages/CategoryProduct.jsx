@@ -25,6 +25,7 @@ const CategoryProduct = () => {
     const fetchData = async()=>{
       const response = await fetch(SummaryApi.filterProduct.url,{
         method : SummaryApi.filterProduct.method,
+        withCredentials: true,
         headers : {
           "content-type" : "application/json"
         },

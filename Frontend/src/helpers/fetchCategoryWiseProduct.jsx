@@ -3,6 +3,7 @@ import SummaryApi from "../common";
 const fetchCategoryWiseProduct=async(category)=>{
     const response=await fetch(SummaryApi.CategoryWiseProduct.url,{
         method:SummaryApi.CategoryWiseProduct.method,
+        withCredentials: true,
         headers:{
             "content-type":"application/json"
         },

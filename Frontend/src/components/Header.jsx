@@ -25,7 +25,7 @@ function Header() {
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.Logout.url, {
       method: SummaryApi.Logout.method,
-      credentials: "include",
+      withCredentials: true,
     });
     const data = await fetchData.json();
     if (data.success) {

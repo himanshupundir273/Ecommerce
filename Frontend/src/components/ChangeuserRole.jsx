@@ -23,7 +23,7 @@ const ChangeUserRole = ({
     const updateUserRole = async() =>{
         const fetchResponse = await fetch(SummaryApi.Updateuser.url,{
             method : SummaryApi.Updateuser.method,
-            credentials : 'include',
+            withCredentials: true,
             headers : {
                 "content-type" : "application/json"
             },
