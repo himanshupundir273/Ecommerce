@@ -27,7 +27,7 @@ async function userSignIncontroller(req,res){
             }
             const token=await jwt.sign(tokenData,process.env.TOKEN_SECRET_KEY, { expiresIn: 60 * 60 * 8});
 
-            const tokenOptions = {
+            const tokenOption = {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === "production", // Use secure only in production
                 sameSite: "Strict", // Prevent CSRF
