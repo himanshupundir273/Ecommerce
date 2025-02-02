@@ -4,6 +4,8 @@ const fetchCategoryWiseProduct=async(category)=>{
     const response=await fetch(SummaryApi.CategoryWiseProduct.url,{
         method:SummaryApi.CategoryWiseProduct.method,
         withCredentials: true,
+        credentials: "include", 
+
         headers:{
             "content-type":"application/json"
         },

@@ -15,6 +15,7 @@ import Context from "../context";
 function Header() {
   const [menuDisplay, setMenuDisplay] = useState(false);
   const user = useSelector((state) => state?.user?.user);
+  console.log("kjsndajksndkjsand",user)
   const dispatch = useDispatch();
   const context = useContext(Context);
   const navigate = useNavigate()
@@ -26,11 +27,15 @@ function Header() {
     const fetchData = await fetch(SummaryApi.Logout.url, {
       method: SummaryApi.Logout.method,
       withCredentials: true,
+      credentials: "include", 
+
     });
     const data = await fetchData.json();
     if (data.success) {
       toast.success(data.message);
       dispatch(setUserDetails(null));
+      navigate("/")
+
     }
     if (data.error) {
       toast.error(data.error);
@@ -54,7 +59,7 @@ function Header() {
             <Logo w={90} h={50} />
           </Link>
         </div>
-        <div className="hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2">
+        <div className="hidden md:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2">
           <input
             type="text"
             placeholder="search product here..."

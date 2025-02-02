@@ -26,6 +26,8 @@ function App() {
     const dataresponse = await fetch(SummaryApi.userDetails.url, {
       method: SummaryApi.userDetails.method,
       withCredentials: true,
+      credentials: "include", 
+
     });
     const dataApi = await dataresponse.json();
     if (dataApi.success) {
@@ -36,6 +38,8 @@ function App() {
     const dataresponse = await fetch(SummaryApi.countaddtocart.url, {
       method: SummaryApi.countaddtocart.method,
       withCredentials: true,
+      credentials: "include", 
+
     });
     const dataApi = await dataresponse.json();
     setCartProductCount(dataApi.data.count);

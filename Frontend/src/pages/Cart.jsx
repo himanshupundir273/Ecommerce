@@ -17,6 +17,8 @@ const Cart = () => {
         const response = await fetch(SummaryApi.addtoCartProductView.url,{
             method : SummaryApi.addtoCartProductView.method,
             withCredentials: true,
+            credentials: "include", 
+
             headers : {
                 "content-type" : 'application/json'
             },
@@ -48,6 +50,8 @@ const Cart = () => {
         const response = await fetch(SummaryApi.updateCartProduct.url,{
             method : SummaryApi.updateCartProduct.method,
             withCredentials: true,
+            credentials: "include", 
+
             headers : {
                 "content-type" : 'application/json'
             },
@@ -73,6 +77,8 @@ const Cart = () => {
             const response = await fetch(SummaryApi.updateCartProduct.url,{
                 method : SummaryApi.updateCartProduct.method,
                 withCredentials: true,
+                credentials: "include", 
+
                 headers : {
                     "content-type" : 'application/json'
                 },
@@ -97,6 +103,8 @@ const Cart = () => {
         const response = await fetch(SummaryApi.deleteCartProduct.url,{
             method : SummaryApi.deleteCartProduct.method,
             withCredentials: true,
+            credentials: "include", 
+
             headers : {
                 "content-type" : 'application/json'
             },

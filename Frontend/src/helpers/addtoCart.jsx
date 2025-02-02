@@ -7,6 +7,8 @@ const addToCart=async(e,id)=>{
     const response=await fetch(SummaryApi.addToCart.url,{
         method:SummaryApi.addToCart.method,
         withCredentials: true,
+        credentials: "include", 
+
         headers:{
             "content-type":"application/json"
         },

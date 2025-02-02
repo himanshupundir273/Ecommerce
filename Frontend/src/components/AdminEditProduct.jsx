@@ -68,6 +68,7 @@ const AdminEditProduct = ({ onClose, productData, fetchdata }) => {
         const response = await fetch(SummaryApi.updateProduct.url,{
           method : SummaryApi.updateProduct.method,
           withCredentials: true,
+          credentials: "include", 
           headers : {
             "content-type" : "application/json"
           },

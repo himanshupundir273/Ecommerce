@@ -36,6 +36,8 @@ function ProductDetails() {
     const response = await fetch(SummaryApi.ProductDetails.url, {
       method: SummaryApi.ProductDetails.method,
       withCredentials: true,
+      credentials: "include", 
+
       headers: {
         "content-type": "application/json",
       },

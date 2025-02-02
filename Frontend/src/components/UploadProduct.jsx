@@ -65,6 +65,8 @@ const UploadProduct = ({ onClose, fetchdata }) => {
     e.preventDefault();
     const uploadProduct = await fetch(SummaryApi.uploadProduct.url, {
       method: SummaryApi.uploadProduct.method,
+      credentials: "include", 
+
       withCredentials: true,
       headers: {
         "Content-Type": "application/json",
