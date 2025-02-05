@@ -80,6 +80,18 @@ const SummaryApi={
     filterProduct:{
         url:`${backendDomain}/api/filter-product`,
         method:"post"
+    },
+    createorder:{
+        url:`${backendDomain}/api/create-order`,
+        method:"post"
+    },
+    verifypayment:{
+        url:`${backendDomain}/api/verify-payment`,
+        method:"post"
+    },
+    clearcart:{
+        url:`${backendDomain}/api/clear-cart`,
+        method:"post"
     }
 }
 export default SummaryApi
